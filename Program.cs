@@ -29,15 +29,17 @@ namespace SemanticQuestion10K
 
             var kernel = Kernel.Builder
             .WithLogger(ConsoleLogger.Log)
-            .Configure(c => c.AddAzureOpenAIEmbeddingGenerationService("text-embedding-ada-002", "text-embedding-ada-002", Env.Var("AZURE_OPENAI_ENDPOINT"), Env.Var("AZURE_OPENAI_KEY")))
-            //.Configure(c => c.AddOpenAIEmbeddingGenerationService("text-embedding-ada-002", "text-embedding-ada-002", Env.Var("OPENAI_API_KEY")))
+            //.Configure(c => c.AddAzureOpenAIEmbeddingGenerationService("text-embedding-ada-002", "text-embedding-ada-002", Env.Var("AZURE_OPENAI_ENDPOINT"), Env.Var("AZURE_OPENAI_KEY")))
+            .Configure(c => c.AddOpenAITextEmbeddingGenerationService("text-embedding-ada-002", "text-embedding-ada-002", Env.Var("OPENAI_API_KEY")))
             .WithMemoryStorage(memoryStore)
             .Build();
 
-            kernel.Config.AddAzureOpenAITextCompletionService("text-davinci-003", "text-davinci-003", Env.Var("AZURE_OPENAI_ENDPOINT"), Env.Var("AZURE_OPENAI_KEY"));
+            kernel.Config
+                //AddAzureOpenAITextCompletionService("text-davinci-003", "text-davinci-003", Env.Var("AZURE_OPENAI_ENDPOINT"), Env.Var("AZURE_OPENAI_KEY"));
+                .AddOpenAITextCompletionService("text-davinci-003", "text-davinci-003", Env.Var("OPENAI_API_KEY"));
 
-            if(question) RunAsync(kernel).Wait();
-            if(parse) ParseText(kernel, tenkfile).Wait();
+            if (question) RunAsync(kernel).Wait();
+            if (parse) ParseText(kernel, tenkfile).Wait();
         }
 
         static async Task ParseText(IKernel kernel, string kfile)
