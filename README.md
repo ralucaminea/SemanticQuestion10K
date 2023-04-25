@@ -9,7 +9,7 @@ Started from this blog post https://devblogs.microsoft.com/semantic-kernel/10k-c
 
 ![image](https://raw.githubusercontent.com/ralucaminea/SemanticQuestion10K/main/SwitchFilingContext_Test3Submissions.png)
 
-This is a sample project that shows the basics of how to ask questions to a document using the Semantic Kernel project (https://github.com/microsoft/semantic-kernel). For this sample I have used Microsoft's 10K statement for 2022. 
+This is a sample project that shows the basics of how to ask questions to a document using the Semantic Kernel project (https://github.com/microsoft/semantic-kernel). For this sample I have used public information: Microsoft's 10K statement for 2022, SVB Financial Group 10K statement for 2022 and HSBC Holdings PLC Annual Report. Details and URLs in docs/index.json 
 
 Embeddings are used to create a semantic database. When you ask a question, the database is searched for similar sentences. 
 A prompt is crafted from these sentences and sent to an OpenAI GPT-3 model in (Azure) OpenAI Service to create an answer.
@@ -25,7 +25,7 @@ A prompt is crafted from these sentences and sent to an OpenAI GPT-3 model in (A
 
 3. There are two assembly references in this project that refer to the Semantic Kernel project. https://github.com/microsoft/semantic-kernel  You will need to download the project from the Semantic Kernel repo, build it, and add the references to the project. 
 
-4. I have included a text file in the docs folder which is just the 10K document saved as text - you will need this to create 
+4. I have included a text files in the docs folder, 10K / annual report document saved as text - you will need this to create 
 the smemantic database. 
 
 5. Provide the following variables through user secrets:
@@ -44,7 +44,7 @@ There are two functions to run in the project: Parse and Question.
 
 1. Parse: This will parse the 10K document and store the embeddings in the Qdrant database. 
 Location of the text files are hardcoded in the docs folder, see 
-![file](https://raw.githubusercontent.com/ralucaminea/SemanticQuestion10K/docs/index.json)
+/docs/index.json
 
 `
 SemanticQuestion10K.exe --parse 
@@ -67,3 +67,5 @@ There are same major directions from here:
 	- one example I have here the SIVB HTM (held to maturity securities and fair value). When prompting to get this value OpenAI failed to transform millions. 
 	
 	![image](https://raw.githubusercontent.com/ralucaminea/SemanticQuestion10K/main/HTM_SIVB10K_SemanticIssue.png)
+- try out multi-language ESEF submissions - maybe use Azure Cognitive Services for translating filings or load XBRL plus labels into the model so you can prompt both in English and in the submission language.
+- many more :) 
