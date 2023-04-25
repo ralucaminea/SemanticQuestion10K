@@ -9,23 +9,57 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="docs\2022\esef\HSBC.txt" />
+    <None Remove="docs\2022\index.json" />
+    <None Remove="docs\2022\sec\MSFT10k.txt" />
+    <None Remove="docs\2022\sec\SIVB10k.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="docs\2022\esef\HSBC.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\index.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\2022\sec\MSFT10k.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\2022\sec\SIVB10k.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.5" />
     <PackageReference Include="BlingFireNuget" Version="0.1.8" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+	  
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Microsoft.SemanticKernel">
-      <HintPath>..\semantic-kernel-main\dotnet\src\SemanticKernel\bin\Debug\netstandard2.1\Microsoft.SemanticKernel.dll</HintPath>
+      <HintPath>F:\_repos\semantic-kernel\dotnet\src\SemanticKernel.MetaPackage\bin\Debug\netstandard2.0\Microsoft.SemanticKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SemanticKernel.Abstractions">
+      <HintPath>F:\_repos\semantic-kernel\dotnet\src\SemanticKernel.MetaPackage\bin\Debug\netstandard2.0\Microsoft.SemanticKernel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SemanticKernel.Connectors.AI.OpenAI">
+      <HintPath>F:\_repos\semantic-kernel\dotnet\src\SemanticKernel.MetaPackage\bin\Debug\netstandard2.0\Microsoft.SemanticKernel.Connectors.AI.OpenAI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SemanticKernel.Connectors.Memory.Qdrant">
-      <HintPath>..\semantic-kernel-main\dotnet\src\Connectors\Connectors.Memory.Qdrant\bin\Debug\netstandard2.1\Microsoft.SemanticKernel.Connectors.Memory.Qdrant.dll</HintPath>
+      <HintPath>F:\_repos\semantic-kernel\dotnet\src\Connectors\Connectors.Memory.Qdrant\bin\Debug\netstandard2.0\Microsoft.SemanticKernel.Connectors.Memory.Qdrant.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SemanticKernel.Core">
+      <HintPath>F:\_repos\semantic-kernel\dotnet\src\SemanticKernel.MetaPackage\bin\Debug\netstandard2.0\Microsoft.SemanticKernel.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="docs\ms10k.txt">
+    <None Update="docs\2022\ms10k.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,33 @@
+{
+  "Version": "1.0",
+  "Documents": [
+    {
+      "Jurisdiction": "SEC",
+      "Publisher": "Microsoft Corporation",
+      "Identifier": "0000789019",
+      "Title": "10-K",
+      "Date": "2022-06-30",
+      "Url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm",
+      "Path": "MSFT10K"
+    },
+    {
+      "Jurisdiction": "SEC",
+      "Publisher": "SVB Financial Group",
+      "Identifier": "0000719739",
+      "Title": "10-K",
+      "Date": "2022-12-31",
+      "Url": "https://www.sec.gov/Archives/edgar/data/719739/000071973923000021/sivb-20221231.htm",
+      "Path": "SIVB10K"
+    },
+    {
+      "Jurisdiction": "ESEF",
+      "Publisher": "HSBC Holdings PLC",
+      "Identifier": "MLU0ZO3ML4LN2LL2TL39",
+      "Title": "Annual Report",
+      "Date": "2022-12-31",
+      "Url": "https://filings.xbrl.org/filing/MLU0ZO3ML4LN2LL2TL39-2022-12-31-ESEF-GB-0",
+      "Path": "HSBC"
+    }
+  ]
+
+}

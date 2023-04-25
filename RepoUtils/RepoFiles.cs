@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 
-using System.IO;
+using System.Text.Json;
 using System.Reflection;
 
 namespace RepoUtils;
@@ -37,5 +37,15 @@ internal static class RepoFiles
         }
 
         return path;
+    }
+
+}
+
+public static class JsonFileReader
+{
+    public static T Read<T>(string filePath)
+    {
+        using FileStream stream = File.OpenRead(filePath);
+        return JsonSerializer.Deserialize<T>(stream);
     }
 }
