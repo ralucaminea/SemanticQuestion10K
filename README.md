@@ -69,3 +69,6 @@ There are same major directions from here:
 	![image](https://raw.githubusercontent.com/ralucaminea/SemanticQuestion10K/main/HTM_SIVB10K_SemanticIssue.png)
 - try out multi-language ESEF submissions - maybe use Azure Cognitive Services for translating filings or load XBRL plus labels into the model so you can prompt both in English and in the submission language.
 - many more :) 
+
+
+No disclaimers here but I wish I had more time to prettify the code.
