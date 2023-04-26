@@ -36,6 +36,9 @@ the smemantic database.
 
 `dotnet user-secrets set "AZURE_OPENAI_KEY "your azure openai service key"`
 
+Similarly for the OPEN AI Key. 
+
+6. Alternatively, provide these variables via the launchSettings.json for the console app.
 
 
 ## Usage
@@ -58,7 +61,6 @@ SemanticQuestion10K.exe --question
 `
 
 ## TODO
-Many things to improve, would love to hear feedback. 
 
 There are same major directions from here:
 - improve on the (Azure) Open AI capabilities, mostly prompting engineering
@@ -68,7 +70,10 @@ There are same major directions from here:
 	
 	![image](https://raw.githubusercontent.com/ralucaminea/SemanticQuestion10K/main/HTM_SIVB10K_SemanticIssue.png)
 - try out multi-language ESEF submissions - maybe use Azure Cognitive Services for translating filings or load XBRL plus labels into the model so you can prompt both in English and in the submission language.
-- many more :) 
+- other:
+	- focus on semantic search (to consume XBRL data) and see how this scales. Leave OpenAI on the second place for now since it comes with an additional cost.
+	- build a web UI and API and open it up for the world to test more scenarios.
 
+Many things to improve, would love to hear feedback. 
 
 No disclaimers here but I wish I had more time to prettify the code.
