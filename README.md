@@ -19,7 +19,7 @@ A prompt is crafted from these sentences and sent to an OpenAI GPT-3 model in (A
 
 ## Setup
 
-1. An (Azure) OpenAI Service is required to run this project. https://azure.microsoft.com/en-us/services/openai-service/ or 
+1. An (Azure) OpenAI Service is required to run this project. https://azure.microsoft.com/en-us/services/openai-service/ or https://platform.openai.com/account/api-keys
 
 2. A Qdrant vector database (https://github.com/qdrant/qdrant) is used to store the embeddings. You can easily run the Qdrant database in a container and map a volume from your drive to the container. https://qdrant.tech/documentation/quick_start/
 
